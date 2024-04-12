@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
       <Link href='/' className='text-orange-400 hover:text-orange-500 p-2'>
         Home
       </Link>
-      <Link href='/about' className='text-orange-400 hover:text-orange-500 p-2'>
+      <Link href='#' className='text-orange-400 hover:text-orange-500 p-2'>
         About
       </Link>
     </nav>

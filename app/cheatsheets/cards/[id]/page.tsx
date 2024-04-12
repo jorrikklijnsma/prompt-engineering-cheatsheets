@@ -1,28 +1,29 @@
+'use client';
+
 import TitleCard from '@/components/CheatSheet/TitleCard';
 import cards from '@/mockup-data/cards';
 import items from '@/mockup-data/items';
 import Item from '@/components/CheatSheet/Item';
-import { useMemo } from 'react';
-import Link from 'next/link';
+import { useMemo, useState } from 'react';
 
 export default function CheatSheetDetail({ params }: { params: { id: string } }) {
   const cardId = params.id;
-  const currentCard = cards.find((card) => card.cardId === cardId);
 
-  if (!currentCard) {
-    return <div>Card not found</div>;
-  }
-
-  // get cards that are part of the cheat sheet
-  const linkedItems: Item[] = [];
+  const [linkedItems, setLinkedItems] = useState<Item[]>([]);
 
   useMemo(() => {
     items.forEach((item) => {
       if (item.cardId === cardId) {
-        linkedItems.push(item);
+        setLinkedItems((linkedItems) => linkedItems.concat(item));
       }
     });
-  }, [items, cardId]);
+  }, [cardId]);
+
+  const currentCard = cards.find((cheatSheet) => cheatSheet.cheatsheetId === cardId);
+
+  if (!currentCard) {
+    return <div>Card not found</div>;
+  }
 
   return (
     <div data-card-id={currentCard}>
