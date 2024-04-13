@@ -6,7 +6,7 @@ import CheatSheet from '@/components/CheatSheet/CheatSheet';
 import { useMemo, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 
-const exportToPNG = async (elementId) => {
+const exportToPNG = async (elementId: string) => {
   const element = document.getElementById(elementId);
   if (!element) {
     console.error('No CheatSheet found');

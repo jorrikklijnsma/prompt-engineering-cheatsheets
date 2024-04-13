@@ -5,10 +5,9 @@ import TitleCard from './TitleCard';
 interface CheatSheetProps {
   data: Cheatsheet;
   linkedCards: Card[];
-  ref: React.RefObject<HTMLDivElement>;
 }
 
-const CheatSheet: React.FC<CheatSheetProps> = ({ data, linkedCards, ref }) => {
+const CheatSheet: React.FC<CheatSheetProps> = ({ data, linkedCards }) => {
   const { cheatsheetId, title, description, creationDate } = data;
 
   // sort LinkedCards by order
