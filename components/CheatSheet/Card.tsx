@@ -12,11 +12,11 @@ const Card: React.FC<CheatSheetCardProps> = ({ title, cardId, description, size,
   const getCardSpanClass = (size: CARD_SIZES) => {
     switch (size) {
       case 'small':
-        return 'col-span-1 row-span-2';
+        return 'col-span-1';
       case 'medium':
-        return 'col-span-2 row-span-3';
+        return 'col-span-2';
       case 'large':
-        return 'col-span-2 row-span-4 ';
+        return 'col-span-2';
       default:
         return '';
     }
@@ -27,6 +27,7 @@ const Card: React.FC<CheatSheetCardProps> = ({ title, cardId, description, size,
       className={`rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 ${getCardSpanClass(
         size
       )}`}
+      data-card-id={cardId}
     >
       <h3 className='text-lg'>{title}</h3>
       <p>{description}</p>

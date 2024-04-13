@@ -1,7 +1,7 @@
 import Item from '@/components/CheatSheet/Item';
 import items from '@/mockup-data/items';
 
-export default function CheatSheetDetail({ params }: { params: { id: string } }) {
+export default function ItemDetail({ params }: { params: { id: string } }) {
   const itemId = params.id;
   const currentItem = items.find((item) => item.itemId === itemId);
 
@@ -10,7 +10,7 @@ export default function CheatSheetDetail({ params }: { params: { id: string } })
   }
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container mx-auto mt-8' data-card-id={itemId}>
       <Item itemData={currentItem} />
     </div>
   );

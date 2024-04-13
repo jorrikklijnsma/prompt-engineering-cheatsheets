@@ -5,9 +5,10 @@ import TitleCard from './TitleCard';
 interface CheatSheetProps {
   data: Cheatsheet;
   linkedCards: Card[];
+  ref: React.RefObject<HTMLDivElement>;
 }
 
-const CheatSheet: React.FC<CheatSheetProps> = ({ data, linkedCards }) => {
+const CheatSheet: React.FC<CheatSheetProps> = ({ data, linkedCards, ref }) => {
   const { cheatsheetId, title, description, creationDate } = data;
 
   // sort LinkedCards by order
@@ -24,8 +25,8 @@ const CheatSheet: React.FC<CheatSheetProps> = ({ data, linkedCards }) => {
   };
 
   return (
-    <div data-cheatsheet-id={cheatsheetId}>
-      <div className='grid auto-rows-[2rem] grid-cols-5 gap-4'>
+    <div data-cheat-sheet-id={cheatsheetId} id={`cheatSheet_${cheatsheetId}`}>
+      <div className='grid auto-rows-fr grid-cols-5 gap-4'>
         <TitleCard title={title} description={description} creationDate={creationDate} />
         {linkedCards.map((card) => (
           <Card
