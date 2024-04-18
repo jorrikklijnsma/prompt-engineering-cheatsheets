@@ -9,7 +9,7 @@ export default function CheatSheetOverview() {
         {cheatsheets.map((cheatSheet: Cheatsheet) => (
           <li
             key={cheatSheet.cheatsheetId}
-            className='mt-4 p-2 border-2 border-slate-400/10 rounded-xl'
+            className='mt-4 p-2 border-2 border-fuchsia-400/10 rounded-xl'
           >
             <Link
               href={`/cheatsheets/${cheatSheet.cheatsheetId}`}

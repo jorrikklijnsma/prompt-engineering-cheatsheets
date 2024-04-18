@@ -3,40 +3,22 @@ import Link from 'next/link';
 interface CheatSheetCardProps {
   title: string;
   cardId: string;
-  description: string;
-  size: CARD_SIZES;
   linkedItems: Item[];
 }
 
-const Card: React.FC<CheatSheetCardProps> = ({ title, cardId, description, size, linkedItems }) => {
-  const getCardSpanClass = (size: CARD_SIZES) => {
-    switch (size) {
-      case 'small':
-        return 'col-span-1';
-      case 'medium':
-        return 'col-span-2';
-      case 'large':
-        return 'col-span-2';
-      default:
-        return '';
-    }
-  };
-
+const Card: React.FC<CheatSheetCardProps> = ({ title, cardId, linkedItems }) => {
   return (
     <div
-      className={`rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 ${getCardSpanClass(
-        size
-      )}`}
+      className={`rounded-xl border-2 border-fuchsia-400/10 bg-neutral-100 dark:bg-neutral-900 break-inside-avoid`}
       data-card-id={cardId}
     >
-      <h3 className='text-lg'>{title}</h3>
-      <p>{description}</p>
-      <ul className='no-list'>
+      <h3 className='text-lg p-4 text-black bg-rose-400'>{title}</h3>
+      <ul className='no-list p-4'>
         {linkedItems.map((item) => (
           <li key={item.itemId}>
             <Link
               href={`/cheatsheets/cards/items/${item.itemId}`}
-              className='text-blue-400 hover:text-blue-500'
+              className='text-white hover:text-rose-300'
             >
               {item.title}
             </Link>

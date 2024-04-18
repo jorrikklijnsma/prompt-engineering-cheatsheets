@@ -29,7 +29,7 @@ export default function CardDetail({ params }: { params: { id: string } }) {
   return (
     <div className='container mx-auto mt-8' data-card-id={cardId}>
       <div className='grid'>
-        <TitleCard title={currentCard.title} description={currentCard.summary} />
+        <TitleCard title={currentCard.title} />
         {linkedItems.map((item) => (
           <Item itemData={item} key={item.itemId} />
         ))}

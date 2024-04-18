@@ -55,7 +55,7 @@ export default function CheatSheetDetail({ params }: { params: { id: string } })
       <div className='flex justify-center space-x-4'>
         <button
           onClick={() => exportToPNG(`cheatSheet_${cheatsheetId}`)}
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+          className='bg-rose-500 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded'
         >
           Export to PNG
         </button>

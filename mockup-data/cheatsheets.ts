@@ -1,16 +1,10 @@
-const cheatsheets: Cheatsheet[] = [
+const cheatSheets: Cheatsheet[] = [
   {
     cheatsheetId: 'cs1',
-    title: 'Prompt Engineering for Developers',
-    description: 'A comprehensive guide to mastering prompt engineering for software development.',
-    creationDate: new Date('2024-04-01'),
-  },
-  {
-    cheatsheetId: 'cs2',
-    title: 'Marketing Magic with Prompt Engineering',
-    description: 'Unlocking the potential of LLMs for marketing professionals.',
-    creationDate: new Date('2024-04-05'),
+    title: 'The ChatGPT Cheat Sheet',
+    description:
+      'A collection of structured prompts for various roles, formats, and restrictions designed to leverage ChatGPT effectively.',
   },
 ];
 
-export default cheatsheets;
+export default cheatSheets;

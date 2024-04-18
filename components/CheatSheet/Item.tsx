@@ -1,17 +1,16 @@
 import Link from 'next/link';
-import MetadataStrip from './MetadataStrip';
 
 interface TitleCardProps {
   itemData: Item;
 }
 
 const TitleCard: React.FC<TitleCardProps> = ({ itemData }) => {
-  const { title, description, example, syntax, tags, created_At, updated_At, itemId } = itemData;
+  const { title, description, example, syntax, itemId } = itemData;
 
   return (
     <div
       data-item-id={itemId}
-      className='col-span-3 row-span-4 p-4 rounded-xl border-2 border-slate-400/10 bg-neutral-100 dark:bg-neutral-900'
+      className='col-span-3 row-span-4 p-4 rounded-xl border-2 border-fuchsia-400/10 bg-neutral-100 dark:bg-neutral-900'
     >
       <Link href={`/cheatsheets/cards/items/${itemId}`}>
         <h2 className='text-xl'>{title}</h2>
@@ -23,11 +22,6 @@ const TitleCard: React.FC<TitleCardProps> = ({ itemData }) => {
       <p>
         <strong>Syntax:</strong> {syntax}
       </p>
-      <MetadataStrip
-        tags={tags}
-        createdAt={new Date(created_At).toLocaleDateString()}
-        updatedAt={new Date(updated_At).toLocaleDateString()}
-      />
     </div>
   );
 };

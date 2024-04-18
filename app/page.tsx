@@ -8,7 +8,10 @@ const Home: React.FC = () => {
   ];
 
   const LinkCard = ({ title, path }: { title: string; path: string }) => (
-    <Link href={path} className='size-60 bg-slate-800 text-white p-4 rounded-lg hover:bg-slate-700'>
+    <Link
+      href={path}
+      className='size-60 bg-fuchsia-800 text-white p-4 rounded-lg hover:bg-fuchsia-700'
+    >
       <h2 className='text-xl'>{title}</h2>
     </Link>
   );
