@@ -9,16 +9,16 @@ interface CheatSheetCardProps {
 const Card: React.FC<CheatSheetCardProps> = ({ title, cardId, linkedItems }) => {
   return (
     <div
-      className={`rounded-xl border-2 border-fuchsia-400/10 bg-neutral-100 dark:bg-neutral-900 break-inside-avoid`}
+      className={`rounded-xl border-2 border-white/10 bg-neutral-100 dark:bg-neutral-900 break-inside-avoid`}
       data-card-id={cardId}
     >
-      <h3 className='text-lg p-4 text-black bg-rose-400'>{title}</h3>
+      <h3 className='text-lg p-4 text-white bg-red-600'>{title}</h3>
       <ul className='no-list p-4'>
         {linkedItems.map((item) => (
           <li key={item.itemId}>
             <Link
               href={`/cheatsheets/cards/items/${item.itemId}`}
-              className='text-white hover:text-rose-300'
+              className='text-white hover:text-white/80'
             >
               {item.title}
             </Link>
